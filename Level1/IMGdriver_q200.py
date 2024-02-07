@@ -1,0 +1,48 @@
+import pandas as pd
+from selenium import webdriver
+import time
+import re
+
+# Execution time: 3 minutes and 51.78 seconds
+
+filename = "Parser_200_driver.csv"
+
+df_input = pd.read_csv(filename)
+
+df_input["SIZE"] = ""
+
+op = webdriver.ChromeOptions()
+op.add_argument("--headless")
+driver = webdriver.Chrome(options=op)
+
+start_time = time.time()
+
+for index, row in df_input.iterrows():
+    image_url = row["image_url"]
+
+    try:
+        driver.get(image_url)
+        time.sleep(1)
+        size_regex = re.compile(r"\((\d+×\d+)\)")
+        match = size_regex.search(driver.title)
+
+        if match:
+            size = match.group(1)
+
+            df_input.at[index, "SIZE"] = size
+        else:
+            df_input.at[index, "SIZE"] = None
+
+    except Exception as e:
+        print(f"Failed to process URL {index}. Error: {e}")
+
+driver.quit()
+
+end_time = time.time()
+elapsed_time = end_time - start_time
+minutes, seconds = divmod(elapsed_time, 60)
+
+df_input.to_csv(filename, index=False)
+
+print(f"Size data saved to {filename}")
+print(f"Execution time: {int(minutes)} minutes and {round(seconds, 2)} seconds")
