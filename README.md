@@ -40,7 +40,8 @@ Level1/
 - [x] отримані дані по картинкам до 9534;
 - [x] встановлено час виконання методів при 200/1000 шт картинок. 
 
-![L11](https://github.com/Daria-jk8/Parser_ImageSize/assets/92945302/2fdbc0f4-3ace-4fe5-b14f-109d8a562936)
+
+![L22](https://github.com/Daria-jk8/Parser_ImageSize/assets/92945302/bbab420c-11c0-4926-ad18-67fbb2ae679c)
 
 <u>CONS</u>
 
