@@ -18,21 +18,29 @@ Level1/
 |   ├─ Parser_1000_asyncio.csv
 |   ├─ bs4_200URL.py                # Parser_200a.csv -- 11.81 seconds                  BeautifulSoup&webdriver
 |   ├─ bs4_1000URL.py               # Parser_1000_driver.csv -- 2 min and 8.44 seconds  BeautifulSoup&webdriver
-|   ├─ bs4_46888URLdriver.py        # Parser_Image_driver_ALL.csv -- URL 9535: stop     BeautifulSoup&webdriver
+|   ├─ bs4_46888URL_9534.py         # Parser_Image_driver_ALL.csv -- URL 9535: stop      BeautifulSoup&webdriver
 |   ├─ bs4_200URLasyncio.py         #(-) doesn't work Parser_200_asyncio.csv            asyncio&aiohttp&BeautifulSoup
-|   
+|
+|----─-/Parser_all/
+|             ├─ Parser_Image_driver_1000.csv
+|             ├─ Parser_Image_driver_2000.csv
+|             ...
+|             ├─ Parser_Image_driver_9000.csv 
+|             
 |- README.md
 
 ```
 
 ## SUMMARY
 
-- get the image size: Parser_200a.csv, Parser_1000_driver.csv, 
+- get the image size: Parser_200a.csv, Parser_1000_driver.csv, Parser_Image_driver_1000-9000.csv
 
 <u>PROS</u>
 - [x] досліджено методи отримання Dimensions(блок <head>) та Size(width х height) (блок<body>): selenium, asyncio&aiohttp, BeautifulSoup&webdriver, asyncio&aiohttp&BeautifulSoup
 - [x] отримані дані по картинкам до 9534;
 - [x] встановлено час виконання методів при 200/1000 шт картинок. 
+
+![L11](https://github.com/Daria-jk8/Parser_ImageSize/assets/92945302/2fdbc0f4-3ace-4fe5-b14f-109d8a562936)
 
 <u>CONS</u>
 
